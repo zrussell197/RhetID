@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.Scanner;
 
 /**
- * Created by Kevin and Zack on 10/31/14.
+ * Created by Kevin and Zach on 10/31/14.
  * Real Time tagger implementation, completed as proof of concept for immediate tagging with staticly instantiated maps
  */
 public class RealTime {

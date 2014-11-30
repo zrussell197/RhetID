@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-/*  com.gleason.pos.taggers.BestTag
+/*
 
     This version of the tagger just tags every word as a noun (NN).
     

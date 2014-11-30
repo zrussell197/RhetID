@@ -4,7 +4,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 /**
- * Created by Kevin and Zack on 10/27/14.
+ * Created by Kevin and Zach on 10/27/14.
  * A Single node of the Viterbi algorithm.
  */
 public class TagNode {

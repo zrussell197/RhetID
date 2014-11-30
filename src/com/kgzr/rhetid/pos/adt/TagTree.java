@@ -8,7 +8,7 @@ import java.util.Map;
 import java.util.Set;
 
 /**
- * Created by Kevin and Zack on 10/27/14.
+ * Created by Kevin and Zach on 10/27/14.
  * A tree of TagNodes used for the implementation of the Viterbi algorithm.
  */
 public class TagTree {

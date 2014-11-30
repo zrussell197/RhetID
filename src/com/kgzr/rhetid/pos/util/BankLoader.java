@@ -1,5 +1,6 @@
 package com.kgzr.rhetid.pos.util;
 
+import com.kgzr.rhetid.RhetIdApp;
 import com.kgzr.rhetid.pos.adt.TaggedWord;
 import com.kgzr.rhetid.pos.tokenizer.Tokenizer;
 
@@ -7,7 +8,7 @@ import java.io.*;
 import java.util.*;
 
 /**
- * Created by Kevin and Zack on 10/31/14.
+ * Created by Kevin and Zach on 10/31/14.
  * The Tree Bank loader class.
  * Class can write the POS Maps to files in the FILE_LOC location.
  * This class is then used to statically load all the treebank files quickly at a low cost.

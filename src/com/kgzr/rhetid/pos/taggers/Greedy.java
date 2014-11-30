@@ -9,7 +9,6 @@ import java.util.LinkedList;
 import java.util.List;
 
 /*
-  com.gleason.pos.taggers.Greedy
 
   This version of the tagger just returns null.
 
