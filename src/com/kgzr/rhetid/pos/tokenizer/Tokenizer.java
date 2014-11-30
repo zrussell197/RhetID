@@ -10,6 +10,8 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
+ * EDITED: For the sake of Zipf's law
+ * TODO: Make this work for Paragraph counts. Reliable to track just the new lines?
   This program is a very simple string tokenizer.
   It recognizes two types of token, a string of digits and
   a string of letters.

@@ -31,7 +31,7 @@ public class RhetIdApp {
     /**
      * runApp put here to keep the main function clean for development.
      * Will be moved later.
-     * @param args
+     * @param args main functions args array.
      */
     public static void runApp(String[] args){
         //First load the part of speech tree.

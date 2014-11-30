@@ -1,8 +1,10 @@
 package com.kgzr.rhetid.zipf;
 
+import com.kgzr.rhetid.pos.tokenizer.Tokenizer;
 import com.kgzr.rhetid.util.StopWords;
 import com.kgzr.rhetid.zipf.adt.NumPair;
 
+import java.io.*;
 import java.util.*;
 
 /**
@@ -15,6 +17,10 @@ public class Zipf {
     private static final int NUM_RETURN=20;
     private int wordCount = 0;
     private Map<String,NumPair> words = new HashMap<String, NumPair>();
+
+    public Zipf(String projectName){
+        this.project=projectName;
+    }
 
     public void putWord(String word) {
         if (this.words.containsKey(word)) {
@@ -43,15 +49,47 @@ public class Zipf {
             NumPair maxVal = maxNumPQ.poll();
             if (stopWords) {
                 if (!StopWords.check(maxVal.getWord())) {
-                    maxWords.add(maxVal);
+                    //TODO: Consider just non-proper nouns? Getting weird values?
+                    if (maxVal.getWord().charAt(0) == maxVal.getWord().toLowerCase().charAt(0)) {
+                        maxWords.add(maxVal);
+                        System.out.println(maxVal.toString());
+                    }
                 }
             }
             else {
                 maxWords.add(maxVal);
+                System.out.println(maxVal.toString());
             }
-            System.out.println(maxVal.toString());
         }
         return maxWords;
+    }
+
+    /**
+     * Main function to test stop words
+     * @param args
+     */
+    public static void main(String[] args) throws IOException{
+        StopWords.loadStopWords();
+        String text = "Macbeth";
+        String file = "Texts/" + text + ".txt";
+
+        InputStreamReader reader = new FileReader(file);
+        StringBuffer input = new StringBuffer(50000);
+        int x = reader.read();
+        while(x!=-1){
+            input.append((char)x);
+            x = reader.read();
+        }
+        Tokenizer tokenizer = new Tokenizer(true);
+        List<String> tokenList = tokenizer.tokenize(new String(input));
+        Zipf zipf = new Zipf(text);
+        for (String word : tokenList) {
+            zipf.putWord(word);
+        }
+        System.out.println("+ STOPWORDS: \n");
+        zipf.getMax(false);
+        System.out.println("- STOPWORDS: \n");
+        zipf.getMax(true);
     }
 
 }
